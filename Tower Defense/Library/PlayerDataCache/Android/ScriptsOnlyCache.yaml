@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - GyroCamera
     - TowerDefense.MouseCamera
     - VRStandardAssets.Utils.Reticle
     - VRStandardAssets.Utils.VRCameraUI
@@ -65,6 +66,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12814}
     - Class: 114
       Script: {instanceID: 12944}
+    - Class: 114
+      Script: {instanceID: 13874}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -536,6 +539,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: da1f96c56aae9ed773b37268a1b7861d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GyroCamera
   platform: 13
   scenePathNames:
   - Assets/LighthouseScene.unity
