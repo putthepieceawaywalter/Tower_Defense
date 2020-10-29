@@ -56,7 +56,7 @@ namespace TowerDefense
 
                 // new screen center
                 float newCenterX = Screen.width / 2 + diffX;
-                float newCenterY = Screen.height / 2 + diffY;
+                float newCenterY = Screen.heights / 2 + diffY;
 
                 Vector3 LookHerePoint = c.ScreenToWorldPoint(new Vector3(newCenterX, newCenterY, c.nearClipPlane));
 
