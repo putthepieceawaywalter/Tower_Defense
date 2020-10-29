@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GyroCamera : MonoBehaviour
 {
+    #if !UNITY_EDITOR
     // STATE
     private float _initialYAngle = 0f;
     private float _appliedGyroYAngle = 0f;
@@ -64,4 +65,5 @@ public class GyroCamera : MonoBehaviour
         enabled = true;
         StartCoroutine(CalibrateYAngle());
     }
+    #endif
 }

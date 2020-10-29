@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LighthouseScene.unity
     guid: bbf2caddcfcee4aebaa9679168a7daf5
+  - enabled: 1
+    path: Assets/Scenes/BridgeScene.unity
+    guid: e2612ac0653ef4ffb81fe6977b767fb5
   m_configObjects: {}

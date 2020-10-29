@@ -201,11 +201,10 @@ GameObject:
   - component: {fileID: 151086943}
   - component: {fileID: 151086952}
   - component: {fileID: 151086951}
-  - component: {fileID: 151086950}
   - component: {fileID: 151086949}
   - component: {fileID: 151086948}
   - component: {fileID: 151086947}
-  - component: {fileID: 151086953}
+  - component: {fileID: 151086950}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -379,19 +378,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoubleClickTime: 0.3
   m_SwipeWidth: 0.3
---- !u!114 &151086953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151086942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ceff690949e98dc80fcd12ad02b754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _smoothing: 0.1
 --- !u!1 &368255526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,4 +1072,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dc098a73ad56eb0e9967f04efc7e414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Bridge
+  sceneName: BridgeScene
