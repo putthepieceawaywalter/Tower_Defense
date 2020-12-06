@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MovementController.cs" />
     <Compile Include="Assets\Scripts\DragCamera.cs" />
     <Compile Include="Assets\Scripts\GyroCamera.cs" />
     <Compile Include="Assets\Scripts\MenuItemController.cs" />
