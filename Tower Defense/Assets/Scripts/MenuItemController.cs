@@ -19,9 +19,20 @@ public class MenuItemController : MonoBehaviour
     {
         // grab component
         vrItem = GetComponent<VRInteractiveItem>();
+        vrItem.enabled = true;
+        vrItem.OnClick += ChangeScene;
+  
 
     }
 
+    private void Update()
+    {
+        // this should run once per frame
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            this.enabled = true;
+        }
+    }
 
     // send player to specified scene
     void ChangeScene()

@@ -28,7 +28,7 @@ namespace TowerDefense
         void Update() {
             
             // if left button is pressed and hasn't started dragging
-            if(Input.GetMouseButtonDown(1) && !isDragging)
+            if(Input.GetMouseButtonDown(0) && !isDragging)
             {
                 // set the flag to true
                 isDragging = true;
@@ -37,7 +37,7 @@ namespace TowerDefense
                 startMouseX = Input.mousePosition.x;
                 startMouseY = Input.mousePosition.y;
             }
-            else if(Input.GetMouseButtonUp(1) && isDragging)
+            else if(Input.GetMouseButtonUp(0) && isDragging)
             {
                 isDragging = false;
             }
