@@ -37,7 +37,7 @@ namespace TowerDefense
                 startMouseX = Input.mousePosition.x;
                 startMouseY = Input.mousePosition.y;
             }
-            else if(Input.GetMouseButtonUp(0) && isDragging)
+            else if(Input.GetMouseButtonUp(1) && isDragging)
             {
                 isDragging = false;
             }
@@ -54,9 +54,13 @@ namespace TowerDefense
                 float diffX = endMouseX - startMouseX;
                 float diffY = endMouseY - startMouseY;
 
-                // new screen center
-                float newCenterX = Screen.width / 2 + diffX;
-                float newCenterY = Screen.height / 2 + diffY;
+
+
+
+                float newCenterX =  Screen.width / 2.0f + 2.0f * diffX;
+                float newCenterY = Screen.height / 2.0f + 2.0f * diffY;
+                
+
 
                 Vector3 LookHerePoint = c.ScreenToWorldPoint(new Vector3(newCenterX, newCenterY, c.nearClipPlane));
 

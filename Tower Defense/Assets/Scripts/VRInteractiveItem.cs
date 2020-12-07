@@ -62,10 +62,10 @@ namespace VRStandardAssets.Utils
 
         public void Up()
         {
-            if (OnUp != null)
+            if (OnUp != null);
 
                 //OnUp();
-                OnClick();
+                //OnClick();
         }
 
 

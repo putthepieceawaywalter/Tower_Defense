@@ -28,7 +28,7 @@ public class MenuItemController : MonoBehaviour
     private void Update()
     {
         // this should run once per frame
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             this.enabled = true;
         }
