@@ -28,16 +28,30 @@ namespace TowerDefense
         void Update() {
             
             // if left button is pressed and hasn't started dragging
-            if(Input.GetMouseButtonDown(0) && !isDragging)
-            {
-                // set the flag to true
-                isDragging = true;
+            //if(Input.GetMouseButtonDown(0) && !isDragging)
+            //{
+            //    // set the flag to true
+            //    isDragging = true;
 
-                // save the mouse start position
+            //    // save the mouse start position
+            //    startMouseX = Input.mousePosition.x;
+            //    startMouseY = Input.mousePosition.y;
+            //}
+            //else if(Input.GetMouseButtonUp(0) && isDragging)
+            //{
+            //    isDragging = false;
+            //}
+            
+
+            // drag camera while space bar is pressed
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                isDragging = true;
                 startMouseX = Input.mousePosition.x;
                 startMouseY = Input.mousePosition.y;
+
             }
-            else if(Input.GetMouseButtonUp(1) && isDragging)
+            else if (!Input.GetKey(KeyCode.Space) && isDragging)
             {
                 isDragging = false;
             }
@@ -57,8 +71,8 @@ namespace TowerDefense
 
 
 
-                float newCenterX =  Screen.width / 2.0f + 2.0f * diffX;
-                float newCenterY = Screen.height / 2.0f + 2.0f * diffY;
+                float newCenterX =  Screen.width / 2.0f + 2.5f * diffX;
+                float newCenterY = Screen.height / 2.0f + 2.5f * diffY;
                 
 
 
