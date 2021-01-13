@@ -2,8 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+using VRStandardAssets.Utils;
+using UnityEngine.SceneManagement;
+
 public class MovementController : MonoBehaviour
 {
+
+
+    /// <summary>
+    /// ADDING STUFF TO COMBINE THIS WITH THE MENU ITEM CONTROLLER
+    /// 
+    /// </summary>
+
+
+
+    VREnemyController vrItem;
+    public string sceneName;
+
+
+    ////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
     // this is an array of waypoints you can set up to walk from one to the other
     [SerializeField]
     private Transform[] waypoints;
@@ -12,7 +41,7 @@ public class MovementController : MonoBehaviour
 
     // set the walk speed
     [SerializeField]
-    private float speed = 9999f;
+    private float speed = 2f;
 
     // index of waypoint character is currently at
     private int waypointIndex = 0;
@@ -23,6 +52,19 @@ public class MovementController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        ///////////////////////////////////////////////////////////////////////
+        // grab component
+        vrItem = GetComponent<VREnemyController>();
+        vrItem.enabled = true;
+        vrItem.OnClick += ChangeScene;
+        ////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 
 
         // initializes the charcter at the 0th waypoint
@@ -41,26 +83,62 @@ public class MovementController : MonoBehaviour
     void Update()
     {
 
+        //ani.SetBool("isWalking", true);
+
+        //if (!isDead)
+        //{
+        //    if (Input.GetKey(KeyCode.Q))
+        //    {
+        //        ani.SetBool("isDead", true);
+        //        isDead = true;
+        //    }
+        //    else
+        //    {
+        //        Move();
+        //    }
+
+        //}
+
         ani.SetBool("isWalking", true);
 
-        if (!isDead)
+        if (ani.GetBool("isDead") == false)
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                ani.SetBool("isDead", true);
-                isDead = true;
-            }
-            else
-            {
-                Move();
-            }
-
+            Move();
         }
 
+    }
 
 
+
+
+
+
+
+
+    /// <summary>
+    /// ////////////////////////////////////////////////////////////////////////////////////////////
+    /// </summary>
+
+    // send player to specified scene
+    void ChangeScene()
+    {
+       // SceneManager.LoadScene(sceneName);
 
     }
+
+    
+
+
+    private void OnEnable()
+    {
+
+        //vrItem.OnClick += ChangeScene;
+    }
+    private void OnDisable()
+    {
+        //vrItem.OnClick -= ChangeScene;
+    }
+
 
     private void Move()
     {

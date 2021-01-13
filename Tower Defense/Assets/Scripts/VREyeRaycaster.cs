@@ -22,12 +22,12 @@ namespace VRStandardAssets.Utils
         [SerializeField] private float m_RayLength = 500f;              // How far into the scene the ray is cast.
 
         
-        private VRInteractiveItem m_CurrentInteractible;                //The current interactive item
-        private VRInteractiveItem m_LastInteractible;                   //The last interactive item
+        private VREnemyController m_CurrentInteractible;                //The current interactive item
+        private VREnemyController m_LastInteractible;                   //The last interactive item
 
 
         // Utility for other classes to get the current interactive item
-        public VRInteractiveItem CurrentInteractible
+        public VREnemyController CurrentInteractible
         {
             get { return m_CurrentInteractible; }
         }
@@ -72,7 +72,7 @@ namespace VRStandardAssets.Utils
             // Do the raycast forweards to see if we hit an interactive item
             if (Physics.Raycast(ray, out hit, m_RayLength, ~m_ExclusionLayers))
             {
-                VRInteractiveItem interactible = hit.collider.GetComponent<VRInteractiveItem>(); //attempt to get the VRInteractiveItem on the hit object
+                VREnemyController interactible = hit.collider.GetComponent<VREnemyController>(); //attempt to get the VRInteractiveItem on the hit object
                 m_CurrentInteractible = interactible;
 
                 // If we hit an interactive item and it's not the same as the last interactive item, then call Over

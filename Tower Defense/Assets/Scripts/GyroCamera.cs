@@ -12,7 +12,15 @@ public class GyroCamera : MonoBehaviour
     private float _tempSmoothing;
 
     // SETTINGS
-    [SerializeField] private float _smoothing = 0.1f;
+
+
+
+    // this was marked as [SeralizeField] which caused an error when updating unity
+    // removing this marker causes no noticeable errors thus far (wish me luck)
+
+
+    
+    private float _smoothing = 0.1f;
 
     private IEnumerator Start()
     {
