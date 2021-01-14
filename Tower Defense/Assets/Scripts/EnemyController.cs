@@ -8,12 +8,8 @@ public class EnemyController : MonoBehaviour
 {
 
     Vector3 user = new Vector3(0, 0, -10);
-    Transform target;
     float speed;
-    Quaternion userRotation = new Quaternion(0, 0, 0, 0);
-    
-
-
+    Quaternion userRotation = new Quaternion(0, 90, 0, 90);
     private float moveSpeed = .5f;
     // Start is called before the first frame update
     void Start()
@@ -27,8 +23,9 @@ public class EnemyController : MonoBehaviour
     {
         var step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, user, moveSpeed * Time.deltaTime);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, userRotation, step);
-
+        transform.LookAt(user);
     }
+
+
 
 }
