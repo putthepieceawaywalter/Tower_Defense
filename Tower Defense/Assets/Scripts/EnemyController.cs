@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -11,6 +12,10 @@ public class EnemyController : MonoBehaviour
     public Transform target;
     float speed;
 
+    public Animator animator;
+
+    public Button click;
+
 
 
     private float moveSpeed = .2f;
@@ -19,7 +24,11 @@ public class EnemyController : MonoBehaviour
     {
 
         transform.LookAt(target);
-    }
+        Button btn = click.GetComponent<Button>();
+        btn.onClick.AddListener(TaskOnClick);
+
+        animator = GetComponent<Animator>();
+}
 
     // Update is called once per frame
     void Update()
@@ -30,5 +39,15 @@ public class EnemyController : MonoBehaviour
 
 
     }
+
+    // the enemy has been shot
+    void TaskOnClick()
+    {
+        // change animation to dying animation
+        animator.SetBool("isDying", true);
+    }
+
+
+
 
 }

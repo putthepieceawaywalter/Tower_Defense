@@ -349,7 +349,7 @@ MonoBehaviour:
     m_Bits: 0
   m_Reticle: {fileID: 0}
   m_VrInput: {fileID: 0}
-  m_ShowDebugRay: 0
+  m_ShowDebugRay: 1
   m_DebugRayLength: 5
   m_DebugRayDuration: 1
   m_RayLength: 500
@@ -568,6 +568,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5302585d24a105240bc2a9631608ebd3,
         type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5302585d24a105240bc2a9631608ebd3,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -648,6 +653,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1441563893
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441563891}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &1441563894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,6 +693,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 151086946}
+  animator: {fileID: 1441563892}
+  click: {fileID: 0}
 --- !u!1 &1465856023
 GameObject:
   m_ObjectHideFlags: 0
