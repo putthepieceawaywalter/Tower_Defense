@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRStandardAssets.Utils;
 
-[RequireComponent(typeof(VRInteractiveItem))]
+
 public class EnemyController : MonoBehaviour
 {
 
@@ -12,12 +12,20 @@ public class EnemyController : MonoBehaviour
     float speed;
 
     VRInteractiveItem vri;
+    VRInteractiveItem vriChild;
     Animator animator;
+
+    Collider collider;
+
 
     private void Awake()
     {
-        vri = GetComponent<VRInteractiveItem>();
-        animator = GetComponent<Animator>();
+        vri = GetComponentInChildren<VRInteractiveItem>();
+
+        //collider = GetComponentInChild<Collider>();
+        collider = GetComponentInChildren<Collider>();
+
+        animator = GetComponentInParent<Animator>();
     }
 
     private float moveSpeed = .2f;
@@ -43,14 +51,18 @@ public class EnemyController : MonoBehaviour
     void Die()
     {
         animator.SetBool("isDying", true);
+
+        
     }
 
     void OnEnable()
     {
         vri.OnClick += Die;
+
     }
     void OnDisable()
     {
+
         vri.OnClick -= Die;
     }
 }
