@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c86893ef87a98c5aad2a2cec248d5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Canvas: {fileID: 0}
+  m_Canvas: {fileID: 1220885671}
 --- !u!114 &151086950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,10 +347,10 @@ MonoBehaviour:
   m_ExclusionLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Reticle: {fileID: 0}
-  m_VrInput: {fileID: 0}
-  m_ShowDebugRay: 0
-  m_DebugRayLength: 5
+  m_Reticle: {fileID: 151086947}
+  m_VrInput: {fileID: 151086952}
+  m_ShowDebugRay: 1
+  m_DebugRayLength: 500
   m_DebugRayDuration: 1
   m_RayLength: 500
 --- !u!114 &151086951
@@ -648,6 +648,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1441563893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441563891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f23d27ba7970f9a82fa312b0fd392c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1441563894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,6 +687,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 151086946}
+--- !u!65 &1441563896
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441563891}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.8, z: 1}
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!1 &1465856023
 GameObject:
   m_ObjectHideFlags: 0
