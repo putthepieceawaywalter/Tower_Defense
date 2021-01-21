@@ -569,47 +569,47 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5302585d24a105240bc2a9631608ebd3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.18129736
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5302585d24a105240bc2a9631608ebd3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.980874
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5302585d24a105240bc2a9631608ebd3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.020505317
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5302585d24a105240bc2a9631608ebd3,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.4741305
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5302585d24a105240bc2a9631608ebd3,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.10332414
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5302585d24a105240bc2a9631608ebd3,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.85432
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5302585d24a105240bc2a9631608ebd3,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.18617634
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5302585d24a105240bc2a9631608ebd3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -24.588
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5302585d24a105240bc2a9631608ebd3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 121.941
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5302585d24a105240bc2a9631608ebd3,
         type: 3}
@@ -716,7 +716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1441563891}
-  enemies: []
+  ec: {fileID: 0}
 --- !u!114 &1441563895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,6 +730,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 151086946}
+  collider: {fileID: 0}
+  isDead: 0
+  isSlowWalk: 1
+  isRunning: 0
+  isWalk: 0
 --- !u!1 &1465856023
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,5 +857,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1.8, z: 1}
-  m_Center: {x: 0, y: -0.2, z: 0}
+  m_Size: {x: 0.8, y: 1.8, z: 0.5}
+  m_Center: {x: 0, y: -0.2, z: 0.2}
