@@ -3,6 +3,9 @@ using System.Collections;
 
 public class GyroCamera : MonoBehaviour
 {
+
+
+
     // STATE
     private float _initialYAngle = 0f;
     private float _appliedGyroYAngle = 0f;
@@ -31,10 +34,15 @@ public class GyroCamera : MonoBehaviour
 
     private void Update()
     {
+#if !UNITY_EDITOR
+
+
         ApplyGyroRotation();
         ApplyCalibration();
 
         transform.rotation = Quaternion.Slerp(transform.rotation, _rawGyroRotation.rotation, _smoothing);
+
+#endif
     }
 
     private IEnumerator CalibrateYAngle()
@@ -63,5 +71,10 @@ public class GyroCamera : MonoBehaviour
     {
         enabled = true;
         StartCoroutine(CalibrateYAngle());
+
+
+
+
+
     }
 }
