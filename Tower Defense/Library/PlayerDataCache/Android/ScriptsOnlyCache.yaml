@@ -87,9 +87,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3010}
     - Class: 114
-      Script: {instanceID: 3310}
+      Script: {instanceID: 3180}
     - Class: 114
-      Script: {instanceID: 15398}
+      Script: {instanceID: 3312}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 137
@@ -511,6 +511,12 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
+      Hash: 71b54f2585d49d798a42a28c1ecacfaa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyCount
+  - hash:
+      serializedVersion: 2
       Hash: e5eca8e7df2f82dee5d11b43a76d9bf6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -527,6 +533,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Scrollbar
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Counter
   - hash:
       serializedVersion: 2
       Hash: 5dea360fb0b147724ac344e6f399c2f3
@@ -587,18 +599,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Counter
-  - hash:
-      serializedVersion: 2
-      Hash: 71b54f2585d49d798a42a28c1ecacfaa
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EnemyCount
   platform: 13
   scenePathNames:
   - Assets/LighthouseScene.unity
