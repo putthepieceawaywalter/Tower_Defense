@@ -11,9 +11,10 @@ public class Guns : MonoBehaviour
 
     ParticleSystem ps;
     bool isShooting;
-    private IEnumerator shoot;
+   // private IEnumerator shoot;
     VRStandardAssets.Utils.VREyeRaycaster rc;
-    
+    public AudioSource bang;
+    //public AudioClip bangClip;
 
 
 
@@ -21,17 +22,10 @@ public class Guns : MonoBehaviour
     {
         ps = GetComponentInChildren<ParticleSystem>();
         rc = GetComponent<VRStandardAssets.Utils.VREyeRaycaster>();
-        // eventually grab ui shoot button
-        //int bullets = 100;
-        //int magazineSize = 10;
+
         isShooting = false;
 
-
-        
-
-
-        
-        //shoot = Shoot();
+        bang = GetComponentInChildren<AudioSource>();
 
 
     }
@@ -47,7 +41,11 @@ public class Guns : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 ps.Play();
+                bang.Play();
                 
+                //bang.PlayOneShot((AudioClip)Resources.Load("handgun_01"));
+                //bang.PlayOneShot((bangClip)Resources.Load("handgun_01");
+
                 //StartCoroutine(shoot);
             }
             
