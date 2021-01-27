@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\SpawnTimer.cs" />
     <Compile Include="Assets\Scripts\EnemyCount.cs" />
     <Compile Include="Assets\Scripts\SpawnManagerLighthouse.cs" />
+    <Compile Include="Assets\Scripts\Guns.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

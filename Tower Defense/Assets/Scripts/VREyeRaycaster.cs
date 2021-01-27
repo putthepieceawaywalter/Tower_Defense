@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace VRStandardAssets.Utils
@@ -25,6 +26,10 @@ namespace VRStandardAssets.Utils
         private VRInteractiveItem m_CurrentInteractible;                //The current interactive item
         private VRInteractiveItem m_LastInteractible;                   //The last interactive item
 
+
+
+
+     
 
         // Utility for other classes to get the current interactive item
         public VRInteractiveItem CurrentInteractible
@@ -92,7 +97,11 @@ namespace VRStandardAssets.Utils
                     m_Reticle.SetPosition(hit);
 
                 if (OnRaycasthit != null)
+                {
+
                     OnRaycasthit(hit);
+                }
+                    
             }
             else
             {
@@ -144,5 +153,8 @@ namespace VRStandardAssets.Utils
                 m_CurrentInteractible.DoubleClick();
 
         }
+
     }
+
+  
 }
