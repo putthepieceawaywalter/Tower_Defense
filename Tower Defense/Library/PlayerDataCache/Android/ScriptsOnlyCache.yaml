@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - EnemyController
     - EnemyCount
+    - Guns
     - GyroCamera
     - TowerDefense.MouseCamera
     - VRStandardAssets.Utils.Reticle
@@ -15,9 +16,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -25,6 +27,7 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
@@ -38,7 +41,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
       Script: {instanceID: 0}
     - Class: 43
       Script: {instanceID: 0}
@@ -52,6 +59,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 91
@@ -63,33 +74,37 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1494}
+      Script: {instanceID: 1566}
     - Class: 114
-      Script: {instanceID: 1504}
+      Script: {instanceID: 1576}
     - Class: 114
-      Script: {instanceID: 1528}
+      Script: {instanceID: 1600}
     - Class: 114
-      Script: {instanceID: 1652}
+      Script: {instanceID: 1724}
     - Class: 114
-      Script: {instanceID: 1828}
+      Script: {instanceID: 1900}
     - Class: 114
-      Script: {instanceID: 2234}
+      Script: {instanceID: 1956}
     - Class: 114
-      Script: {instanceID: 2314}
+      Script: {instanceID: 2308}
     - Class: 114
-      Script: {instanceID: 2458}
+      Script: {instanceID: 2388}
     - Class: 114
-      Script: {instanceID: 2612}
+      Script: {instanceID: 2532}
     - Class: 114
-      Script: {instanceID: 2626}
+      Script: {instanceID: 2686}
     - Class: 114
-      Script: {instanceID: 2792}
+      Script: {instanceID: 2700}
     - Class: 114
-      Script: {instanceID: 3010}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 3180}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3312}
+      Script: {instanceID: 3254}
+    - Class: 114
+      Script: {instanceID: 3386}
+    - Class: 114
+      Script: {instanceID: 3518}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 137
@@ -97,6 +112,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -257,6 +276,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 9ec60d032460316b93cbcf1078c1297a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Guns
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -535,12 +560,6 @@ ScriptsOnlyBuild:
     className: Scrollbar
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Counter
-  - hash:
-      serializedVersion: 2
       Hash: 5dea360fb0b147724ac344e6f399c2f3
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -599,6 +618,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 699619b86d9359741a4f58540298c80b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Touchable
   platform: 13
   scenePathNames:
   - Assets/LighthouseScene.unity
