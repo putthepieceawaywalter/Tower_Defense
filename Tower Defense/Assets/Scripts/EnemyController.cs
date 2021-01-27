@@ -96,6 +96,8 @@ public class EnemyController : MonoBehaviour
     {
         animator.SetBool("isDying", true);
         isDead = true;
+
+        
         UnityEngine.Object.Destroy(spawnManager.enemy, 5f);
 
 

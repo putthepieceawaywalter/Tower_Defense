@@ -1,0 +1,15 @@
+////////////////////////
+// Process for importing characters from mixamo
+
+
+Download from mixamo
+
+If it is the first character of this type make sure to select 'with skin' otherwise
+select without skin to save space. 
+
+
+place character in scene
+
+select character and click "extract textures" and select the materials folder
+Select 'fix now' in the pop up window
+
