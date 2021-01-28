@@ -13,13 +13,6 @@ ScriptsOnlyBuild:
     - VRStandardAssets.Utils.VRInteractiveItem
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -74,37 +67,37 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1566}
+      Script: {instanceID: 1494}
     - Class: 114
-      Script: {instanceID: 1576}
+      Script: {instanceID: 1504}
     - Class: 114
-      Script: {instanceID: 1600}
+      Script: {instanceID: 1528}
     - Class: 114
-      Script: {instanceID: 1724}
+      Script: {instanceID: 1652}
     - Class: 114
-      Script: {instanceID: 1900}
+      Script: {instanceID: 1830}
     - Class: 114
-      Script: {instanceID: 1956}
+      Script: {instanceID: 1886}
     - Class: 114
-      Script: {instanceID: 2308}
+      Script: {instanceID: 2238}
     - Class: 114
-      Script: {instanceID: 2388}
+      Script: {instanceID: 2318}
     - Class: 114
-      Script: {instanceID: 2532}
+      Script: {instanceID: 2462}
     - Class: 114
-      Script: {instanceID: 2686}
+      Script: {instanceID: 2616}
     - Class: 114
-      Script: {instanceID: 2700}
+      Script: {instanceID: 2630}
     - Class: 114
-      Script: {instanceID: 2866}
+      Script: {instanceID: 2796}
     - Class: 114
-      Script: {instanceID: 3084}
+      Script: {instanceID: 3014}
     - Class: 114
-      Script: {instanceID: 3254}
+      Script: {instanceID: 3184}
     - Class: 114
-      Script: {instanceID: 3386}
+      Script: {instanceID: 3316}
     - Class: 114
-      Script: {instanceID: 3518}
+      Script: {instanceID: 3448}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 137
@@ -222,6 +215,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: HorizontalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 699619b86d9359741a4f58540298c80b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Touchable
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -618,13 +617,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
-  - hash:
-      serializedVersion: 2
-      Hash: 699619b86d9359741a4f58540298c80b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Touchable
   platform: 13
   scenePathNames:
   - Assets/LighthouseScene.unity
-  playerPath: C:/Users/putth/Tower_Defense/Tower Defense/file.apk
+  playerPath: C:/Users/putth/clone/release.aab
