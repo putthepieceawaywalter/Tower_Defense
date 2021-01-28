@@ -65,9 +65,8 @@
     <Compile Include="Assets\Scripts\VRCameraUI.cs" />
     <Compile Include="Assets\Scripts\GyroCamera.cs" />
     <Compile Include="Assets\Scripts\SpawnTimer.cs" />
-    <Compile Include="Assets\Scripts\SpawnManagerLighthouse.cs" />
-    <Compile Include="Assets\Counter.cs" />
     <Compile Include="Assets\Scripts\EnemyCount.cs" />
+    <Compile Include="Assets\Scripts\SpawnManagerLighthouse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
