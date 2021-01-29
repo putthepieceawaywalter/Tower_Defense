@@ -11,13 +11,17 @@ public class EnemyController : MonoBehaviour
     public Transform target;
     float speed;
 
+
+    public float health = 50f;
+   
+
     VRInteractiveItem vriChild;
     Animator animator;
 
 
     public BoxCollider collider;
 
-    SpawnManagerLighthouse spawnManager;
+    //SpawnManagerLighthouse spawnManager;
 
     public bool isDead = false;
 
@@ -38,9 +42,6 @@ public class EnemyController : MonoBehaviour
         collider = GetComponentInChildren<BoxCollider>();
 
         animator = GetComponentInParent<Animator>();
-
-        spawnManager = GetComponent<SpawnManagerLighthouse>();
-
      
     }
 
@@ -97,9 +98,13 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("isDying", true);
         isDead = true;
 
-        
-        UnityEngine.Object.Destroy(spawnManager.enemy, 5f);
 
+        //Destroy(gameObject);
+
+        //UnityEngine.Object.Destroy(spawnManager.enemy, 5f);
+        //UnityEngine.Object.Destroy(spawnManager.enemy);
+
+        UnityEngine.Object.Destroy(gameObject, 5f);
 
 
 
@@ -115,6 +120,16 @@ public class EnemyController : MonoBehaviour
     {
 
         vriChild.OnClick -= Die;
+    }
+
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 
 
