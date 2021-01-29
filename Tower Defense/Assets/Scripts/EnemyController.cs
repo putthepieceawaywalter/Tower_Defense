@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRStandardAssets.Utils;
+
 
 
 public class EnemyController : MonoBehaviour
@@ -11,13 +11,17 @@ public class EnemyController : MonoBehaviour
     public Transform target;
     float speed;
 
-    VRInteractiveItem vriChild;
+
+    public float health = 50f;
+   
+
+    //VRInteractiveItem vriChild;
     Animator animator;
 
 
     public BoxCollider collider;
 
-    SpawnManagerLighthouse spawnManager;
+    //SpawnManagerLighthouse spawnManager;
 
     public bool isDead = false;
 
@@ -34,13 +38,10 @@ public class EnemyController : MonoBehaviour
 
     private void Awake()
     {
-        vriChild = GetComponentInChildren<VRInteractiveItem>();
+        //vriChild = GetComponentInChildren<VRInteractiveItem>();
         collider = GetComponentInChildren<BoxCollider>();
 
         animator = GetComponentInParent<Animator>();
-
-        spawnManager = GetComponent<SpawnManagerLighthouse>();
-
      
     }
 
@@ -97,24 +98,38 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("isDying", true);
         isDead = true;
 
-        
-        UnityEngine.Object.Destroy(spawnManager.enemy, 5f);
 
+        //Destroy(gameObject);
+
+        //UnityEngine.Object.Destroy(spawnManager.enemy, 5f);
+        //UnityEngine.Object.Destroy(spawnManager.enemy);
+
+        UnityEngine.Object.Destroy(gameObject, 5f);
 
 
 
     }
 
-    void OnEnable()
-    {
-        vriChild.OnClick += Die;
+    //void OnEnable()
+    //{
+    //    vriChild.OnClick += Die;
         
 
-    }
-    void OnDisable()
-    {
+    //}
+    //void OnDisable()
+    //{
 
-        vriChild.OnClick -= Die;
+    //    vriChild.OnClick -= Die;
+    //}
+
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 
 
