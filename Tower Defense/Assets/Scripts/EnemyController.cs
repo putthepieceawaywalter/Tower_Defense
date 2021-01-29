@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRStandardAssets.Utils;
+
 
 
 public class EnemyController : MonoBehaviour
@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
     public float health = 50f;
    
 
-    VRInteractiveItem vriChild;
+    //VRInteractiveItem vriChild;
     Animator animator;
 
 
@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
 
     private void Awake()
     {
-        vriChild = GetComponentInChildren<VRInteractiveItem>();
+        //vriChild = GetComponentInChildren<VRInteractiveItem>();
         collider = GetComponentInChildren<BoxCollider>();
 
         animator = GetComponentInParent<Animator>();
@@ -110,17 +110,17 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    void OnEnable()
-    {
-        vriChild.OnClick += Die;
+    //void OnEnable()
+    //{
+    //    vriChild.OnClick += Die;
         
 
-    }
-    void OnDisable()
-    {
+    //}
+    //void OnDisable()
+    //{
 
-        vriChild.OnClick -= Die;
-    }
+    //    vriChild.OnClick -= Die;
+    //}
 
 
     public void TakeDamage(float damage)

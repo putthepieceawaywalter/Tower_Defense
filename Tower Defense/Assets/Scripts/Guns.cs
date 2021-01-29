@@ -25,7 +25,7 @@ public class Guns : MonoBehaviour
     ParticleSystem ps;
     bool isShooting;
    // private IEnumerator shoot;
-    VRStandardAssets.Utils.VREyeRaycaster rc;
+    //VRStandardAssets.Utils.VREyeRaycaster rc;
     public AudioSource bang;
     public Button btn;
 
@@ -34,7 +34,7 @@ public class Guns : MonoBehaviour
     void Start()
     {
         ps = GetComponentInChildren<ParticleSystem>();
-        rc = GetComponent<VRStandardAssets.Utils.VREyeRaycaster>();
+        //rc = GetComponent<VRStandardAssets.Utils.VREyeRaycaster>();
 
         isShooting = false;
 

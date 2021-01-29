@@ -56,19 +56,11 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\VRInteractiveItem.cs" />
-    <Compile Include="Assets\Scripts\Reticle.cs" />
-    <Compile Include="Assets\Scripts\VREyeRaycaster.cs" />
     <Compile Include="Assets\Scripts\MouseCamera.cs" />
     <Compile Include="Assets\Scripts\Guns.cs" />
-    <Compile Include="Assets\Scripts\VRInput.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
-    <Compile Include="Assets\Scripts\VRCameraUI.cs" />
     <Compile Include="Assets\Scripts\GyroCamera.cs" />
-    <Compile Include="Assets\Scripts\SpawnTimer.cs" />
     <Compile Include="Assets\Scripts\EnemyCount.cs" />
-    <Compile Include="Assets\Scripts\SpawnManagerLighthouse.cs" />
-    <Compile Include="Assets\Scripts\Touchable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
