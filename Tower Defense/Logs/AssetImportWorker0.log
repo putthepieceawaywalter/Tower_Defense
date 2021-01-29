@@ -1,0 +1,110 @@
+Using pre-set license
+Built from '2020.2/release' branch; Version is '2020.2.1f1 (270dd8c3da1c) revision 2559448'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.0) 64bit' Language: 'en' Physical Memory: 16318 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.2.1f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/putth/clone/Tower_Defense/Tower Defense
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+50767
+Successfully changed project path to: C:/Users/putth/clone/Tower_Defense/Tower Defense
+C:/Users/putth/clone/Tower_Defense/Tower Defense
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 25.44 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.1f1 (270dd8c3da1c)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/putth/clone/Tower_Defense/Tower Defense/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Radeon RX Vega (ID=0x687f)
+    Vendor:   
+    VRAM:     8119 MB
+    Driver:   27.20.14501.28009
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56064
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.1f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.002911 seconds.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 23.70 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.541 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000866 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.875 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1080 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 127.5 MB.
+System memory in use after: 127.6 MB.
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 1530.
+Total: 1.803200 ms (FindLiveObjects: 0.145500 ms CreateObjectMapping: 0.029800 ms MarkObjects: 1.574000 ms  DeleteObjects: 0.052800 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Gun Models
+  artifactKey: Guid(74ce5b8c316c1e140a41c1521b89a155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gun Models using Guid(74ce5b8c316c1e140a41c1521b89a155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07934e05ab7e6ac2d148bd930796595e') in 0.010020 seconds
+  Import took 0.011946 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.224207 seconds.
+  path: Assets/New Folder
+  artifactKey: Guid(43cc104f45bd49247b7d5b0f7866ecc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Folder using Guid(43cc104f45bd49247b7d5b0f7866ecc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '570bdfb0cf63bcc0ab78572174cddc8a') in 0.008446 seconds
+  Import took 0.010424 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.223387 seconds.
+  path: Assets/Scripts/EnemyController.cs
+  artifactKey: Guid(6df3c2e0343e0c34085efaad1b25a974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EnemyController.cs using Guid(6df3c2e0343e0c34085efaad1b25a974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a34019443da1136a25c0df762000805d') in 0.033107 seconds
+  Import took 0.035032 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006512 seconds.
+  path: Assets/Scripts/EnemyController.cs
+  artifactKey: Guid(6df3c2e0343e0c34085efaad1b25a974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EnemyController.cs using Guid(6df3c2e0343e0c34085efaad1b25a974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a34019443da1136a25c0df762000805d') in 0.003591 seconds
+  Import took 0.005350 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
