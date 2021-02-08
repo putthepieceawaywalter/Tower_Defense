@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour
     //SpawnManagerLighthouse spawnManager;
 
     public bool isDead = false;
+    public bool isAttacking = false;
 
     // I'd like this to default to false once there is more than one type of enemy
     // when that happens the spawn manager will manually assign a starting value for this
@@ -51,8 +52,8 @@ public class EnemyController : MonoBehaviour
     {
 
 
-       
-        transform.LookAt(target);
+       // this rotates the enemy to look at the user
+       transform.LookAt(target);
     }
 
     // Update is called once per frame
@@ -60,13 +61,13 @@ public class EnemyController : MonoBehaviour
     {
 
 
-        if (isDead)
+        if (isDead || isAttacking)
         {
             moveSpeed = 0f;
         }
         else if (isSlowWalk)
         {
-            moveSpeed = .2f;
+            moveSpeed = 10f;
         }
         else if (isWalk)
         {
@@ -82,12 +83,18 @@ public class EnemyController : MonoBehaviour
             moveSpeed = 0f; 
         }
 
+
+        // distance = Vector3.Distance(obj.transform.positition, obj2.transform.position);
         
 
         var step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, user, moveSpeed * Time.deltaTime);
         
-
+        if (Vector3.Distance(this.transform.position, user) < 1.5f)
+        {
+            // begin attacking
+            Attack();
+        }
 
     }
 
@@ -97,30 +104,10 @@ public class EnemyController : MonoBehaviour
     {
         animator.SetBool("isDying", true);
         isDead = true;
-
-
-        //Destroy(gameObject);
-
-        //UnityEngine.Object.Destroy(spawnManager.enemy, 5f);
-        //UnityEngine.Object.Destroy(spawnManager.enemy);
-
         UnityEngine.Object.Destroy(gameObject, 5f);
 
 
-
     }
-
-    //void OnEnable()
-    //{
-    //    vriChild.OnClick += Die;
-        
-
-    //}
-    //void OnDisable()
-    //{
-
-    //    vriChild.OnClick -= Die;
-    //}
 
 
     public void TakeDamage(float damage)
@@ -132,6 +119,11 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public void Attack()
+    {
+        animator.SetBool("isAttacking", true);
+        isAttacking = true;
+    }
 
 }
 
