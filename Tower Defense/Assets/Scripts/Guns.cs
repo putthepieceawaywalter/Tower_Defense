@@ -16,6 +16,7 @@ public class Guns : MonoBehaviour
     // this will allow me to manage the muzzle flash, audio clip and shooting mechanics all in one clear and concise file
     public float damage = 10f;
     public float range = 100f;
+    public float timeBetweenShots = .001f;
 
     public Camera fpsCam;
 
@@ -78,18 +79,25 @@ public class Guns : MonoBehaviour
     void ButtonClick()
     {
 
-       if (!isShooting)
+        if (!isShooting)
         {
             ps.Play();
             bang.Play();
-            
+            isShooting = true;
+
 
             Shoot();
+            StartCoroutine(Waiting());
+
+
+
+
         }
     }
 
     void Shoot()
     {
+       // isShooting = false;
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
@@ -101,18 +109,21 @@ public class Guns : MonoBehaviour
             {
                 // we have hit an enemy!
                 enemy.TakeDamage(damage);
+
+                //isShooting = false;
+               // yield return new WaitForSeconds(timeBetweenShots);
+
             }
 
         }
-    }
-    //private IEnumerator Shoot()
-    //{
 
-    //    isShooting = true;
-    //    //rc.enabled = false;
-    //    yield return new WaitForSeconds(1f);
-    //    //rc.enabled = true;
-    //    isShooting = false;
-        
-    //}
+
+    }
+    private IEnumerator Waiting()
+    {
+        yield return new WaitForSeconds(timeBetweenShots);
+        //rc.enabled = true;
+        isShooting = false;
+
+    }
 }
