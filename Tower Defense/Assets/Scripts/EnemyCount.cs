@@ -16,7 +16,9 @@ public class EnemyCount : MonoBehaviour
     public GameObject[] enemies;
 
 
-    public EnemyController ec;
+
+
+    //public EnemyController ec;
 
 
     // These are spawn points custom picked for the lighthouse scene, They will almost certainly not work for other scenes
@@ -37,6 +39,8 @@ public class EnemyCount : MonoBehaviour
     void Start()
     {
 
+
+
         enemies = new GameObject[enemyTotal];
 
         startPoints[0] = spawnPoint1;
@@ -46,7 +50,7 @@ public class EnemyCount : MonoBehaviour
         startPoints[4] = spawnPoint5;
 
 
-        ec = GetComponent<EnemyController>();
+        //ec = GetComponent<EnemyController>();
 
         enemycoroutine = EnemyCoroutine(enemyTotal);
 

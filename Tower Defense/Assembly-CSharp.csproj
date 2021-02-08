@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\GyroCamera.cs" />
     <Compile Include="Assets\Scripts\EnemyCount.cs" />
     <Compile Include="Assets\isAttacking.cs" />
+    <Compile Include="Assets\Scripts\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -7,9 +7,14 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
 
-    Vector3 user = new Vector3(0, 0, -10);
+    Vector3 userPosition = new Vector3(0, 0, -10);
     public Transform target;
     float speed;
+
+    public User user;
+
+
+    public float attackInterval = 2.63f;
 
 
     public float health = 50f;
@@ -43,6 +48,8 @@ public class EnemyController : MonoBehaviour
         collider = GetComponentInChildren<BoxCollider>();
 
         animator = GetComponentInParent<Animator>();
+
+        //user = GetComponentInParent<User>();
      
     }
 
@@ -67,7 +74,7 @@ public class EnemyController : MonoBehaviour
         }
         else if (isSlowWalk)
         {
-            moveSpeed = 10f;
+            moveSpeed = .2f;
         }
         else if (isWalk)
         {
@@ -88,12 +95,24 @@ public class EnemyController : MonoBehaviour
         
 
         var step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, user, moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, userPosition, moveSpeed * Time.deltaTime);
         
-        if (Vector3.Distance(this.transform.position, user) < 1.5f)
+        if (Vector3.Distance(this.transform.position, userPosition) < 1.5f)
         {
             // begin attacking
-            Attack();
+            if (!isAttacking)
+            {
+
+                float damage = Random.Range(1, 10);
+                isAttacking = true;
+                //Attack();
+                animator.SetBool("isAttacking", true);
+
+
+                user.TakeDamage(damage);
+                StartCoroutine(AttackUser());
+            }
+
         }
 
     }
@@ -119,10 +138,11 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void Attack()
+
+    private IEnumerator AttackUser()
     {
-        animator.SetBool("isAttacking", true);
-        isAttacking = true;
+        yield return new WaitForSeconds(attackInterval);
+        isAttacking = false;
     }
 
 }
