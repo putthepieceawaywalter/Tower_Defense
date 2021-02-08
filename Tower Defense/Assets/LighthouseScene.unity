@@ -5460,7 +5460,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5302585d24a105240bc2a9631608ebd3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5302585d24a105240bc2a9631608ebd3,
         type: 3}
@@ -6074,6 +6074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 100
+  timeBetweenShots: 0.33
   fpsCam: {fileID: 151086945}
   bang: {fileID: 1604161193}
   btn: {fileID: 1546448916}
