@@ -5611,6 +5611,7 @@ MonoBehaviour:
   health: 50
   collider: {fileID: 0}
   isDead: 0
+  isAttacking: 0
   isSlowWalk: 1
   isRunning: 0
   isWalk: 0
