@@ -12,8 +12,13 @@ they complete the level.
 There are several C# scripts that govern the mechanics of this game. These are located in the Tower Defense/Assets/Scripts folder. 
 
 EnemyController.cs            Controls the movements and actions of the enemy
+
 EnemyCount.cs                 Controls the current amount and the spawn locations of the enemy.
+
 Guns.cs                       Controls which gun is selected and its properties.
+
 GyroCamera.cs                 Uses the accelerometer in the user's device to control camera movement.
+
 MouseCamera.cs                Allows the use of the mouse to pan the camera when testing the application on a pc.
+
 User.cs                       Governs things such as the user's hit points.
