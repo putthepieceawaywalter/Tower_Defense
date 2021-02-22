@@ -74,7 +74,11 @@ public class EnemyController : MonoBehaviour
         }
         else if (isSlowWalk)
         {
-            moveSpeed = .2f;
+
+            // moveSpeed should be .2f
+            // the high speed moveSpeed is for demo use only
+            moveSpeed = 1f;
+            //moveSpeed = .2f;
         }
         else if (isWalk)
         {
@@ -123,6 +127,7 @@ public class EnemyController : MonoBehaviour
     {
         animator.SetBool("isDying", true);
         isDead = true;
+        StopCoroutine(AttackUser());
         UnityEngine.Object.Destroy(gameObject, 5f);
 
 
