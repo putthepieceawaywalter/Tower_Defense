@@ -16,7 +16,7 @@ public class AKGunBehavior : MonoBehaviour
     // this will allow me to manage the muzzle flash, audio clip and shooting mechanics all in one clear and concise file
     public float damage = 10f;
     public float range = 100f;
-    public float timeBetweenShots = .001f;
+    public float timeBetweenShots = .00001f;
 
     public Camera fpsCam;
 
