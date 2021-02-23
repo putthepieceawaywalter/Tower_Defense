@@ -7,7 +7,7 @@ public class EnemyCount : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject enemy;
-    int enemyTotal = 10;
+    int enemyTotal = 2;
     int numSpawnPoints = 5;
     int lastSpawnPoint = 0;
     bool isSpawning = false;
