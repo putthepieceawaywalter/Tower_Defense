@@ -57,12 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MouseCamera.cs" />
-    <Compile Include="Assets\Scripts\Guns.cs" />
+    <Compile Include="Assets\Scripts\HandGun.cs" />
+    <Compile Include="Assets\Scripts\WeaponSwitching.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
-    <Compile Include="Assets\Scripts\GyroCamera.cs" />
-    <Compile Include="Assets\Scripts\EnemyCount.cs" />
-    <Compile Include="Assets\isAttacking.cs" />
     <Compile Include="Assets\Scripts\User.cs" />
+    <Compile Include="Assets\Scripts\AKGunBehavior.cs" />
+    <Compile Include="Assets\Scripts\GyroCamera.cs" />
+    <Compile Include="Assets\Scripts\SwitchWeaponButton.cs" />
+    <Compile Include="Assets\Scripts\EnemyCount.cs" />
+    <Compile Include="Assets\Scripts\isAttacking.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

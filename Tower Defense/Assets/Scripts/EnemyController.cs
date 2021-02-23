@@ -77,8 +77,8 @@ public class EnemyController : MonoBehaviour
 
             // moveSpeed should be .2f
             // the high speed moveSpeed is for demo use only
-            moveSpeed = 1f;
-            //moveSpeed = .2f;
+            // moveSpeed = 1f;
+            moveSpeed = .2f;
         }
         else if (isWalk)
         {
