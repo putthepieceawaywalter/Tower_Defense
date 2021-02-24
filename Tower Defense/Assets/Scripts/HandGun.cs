@@ -14,9 +14,22 @@ public class HandGun : MonoBehaviour
 
     // the following code is the beginning of removing vreyeraycaster and moving that code over to the gun
     // this will allow me to manage the muzzle flash, audio clip and shooting mechanics all in one clear and concise file
-    public float damage = 10f;
+    public float damage = 0f;
     public float range = 100f;
     public float timeBetweenShots = .001f;
+
+
+
+    public int[] bullets;
+    public int[] clipSize;
+    public int[] bulletsInClip;
+
+    public int handgunBullets = 20;
+    public int akBullets = 50;
+    public int handgunClip = 10;
+    public int akClip = 2;
+
+    public int totalWeapons = 2;
 
     public WeaponSwitching ws;
 
@@ -33,20 +46,36 @@ public class HandGun : MonoBehaviour
     public AudioSource bang;
     public Button btn;
 
-
-
     void Start()
     {
+
+        bullets = new int[totalWeapons];
+        bulletsInClip = new int[totalWeapons];
+        clipSize = new int[totalWeapons];
+        
         ps = GetComponentInChildren<ParticleSystem>();
         //rc = GetComponent<VRStandardAssets.Utils.VREyeRaycaster>();
 
+
+        bullets.SetValue(handgunBullets, 0);
+        bullets.SetValue(akBullets, 1);
+        bulletsInClip.SetValue(akBullets, 0);
+        bulletsInClip.SetValue(akBullets, 1);
+
+        clipSize.SetValue(handgunClip, 0);
+        clipSize.SetValue(akBullets, 1);
+        //bullets[0] = handgunBullets;
+
+        //bulletsInClip[0] = handgunBullets;
+        //bulets[1] = akBullets;
+        //bulletsInClip[1] = akBullets;
+
+        //clipSize[0] = handgunClip;
+        //clipSize[1] = akClip;
+
         isShooting = false;
 
-
         ws = GetComponentInParent<WeaponSwitching>();
-
-        
-
       
         bang = GetComponent<AudioSource>();
         btn = GetComponentInChildren<Button>();
@@ -65,20 +94,33 @@ public class HandGun : MonoBehaviour
             // bang should be set in the set weapon stats function
             // protecting this line until I have ak47 audio clips
             currentWeapon = ws.currentWeapon;
-            if (currentWeapon == 0)
-            {
-                bang.Play();
-            }
+
+            bang.Play();
+         
 
             isShooting = true;
 
+            SetCurrentWeaponStats();
 
-            Shoot();
-            StartCoroutine(Waiting());
-
-
-
-
+            if (bulletsInClip[currentWeapon] > 0)
+            {
+                --bulletsInClip[currentWeapon];
+                Debug.Log(bulletsInClip[currentWeapon]);
+                Shoot();
+                StartCoroutine(Waiting());
+            }
+            else
+            {
+                // reload if there are bullets to reload with
+                if(bullets[currentWeapon] > 0)
+                {
+                    Reload();
+                }
+                else
+                {
+                    // user is out of bullets
+                }
+            }
         }
     }
 
@@ -86,7 +128,7 @@ public class HandGun : MonoBehaviour
     {
         // isShooting = false;
 
-        SetCurrentWeaponStats();
+
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
@@ -124,7 +166,7 @@ public class HandGun : MonoBehaviour
             case 0:
                 // handgun
                 damage = 10f;
-                timeBetweenShots = .001f;
+                timeBetweenShots = .1f;
                 break;
             case 1:
                 // ak 47
@@ -136,4 +178,23 @@ public class HandGun : MonoBehaviour
                 break;
         }
     }
+
+    void Reload()
+    {
+        if (bullets[currentWeapon] > clipSize[currentWeapon])
+        {
+            bulletsInClip[currentWeapon] = clipSize[currentWeapon];
+            bullets[currentWeapon] = bullets[currentWeapon] - clipSize[currentWeapon];
+
+        }
+        else
+        {
+            // there are bullets remaining but not enough to fill the clip
+
+            bulletsInClip[currentWeapon] = bullets[currentWeapon];
+            bullets[currentWeapon] = 0;
+
+        }
+    }
+
 }
