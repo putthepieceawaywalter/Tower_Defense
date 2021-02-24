@@ -12,13 +12,14 @@ public class WeaponSwitching : MonoBehaviour
     public WeaponSwitching ws;
 
     public Canvas switchCanvas;
+    public string swCanvas = "SwitchWeaponCanvas";
     
     public Button switchWeapon;
     // Start is called before the first frame update
     void Start()
     {
 
-        switchWeapon = GameObject.Find("SwitchWeaponCanvas").GetComponentInChildren<Button>();
+        switchWeapon = GameObject.Find(swCanvas).GetComponentInChildren<Button>();
 
 
         //ws = GameObject.Find("Holster").GetComponent<WeaponSwitching>();

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Guns : MonoBehaviour
+public class HandGun : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -18,6 +18,8 @@ public class Guns : MonoBehaviour
     public float range = 100f;
     public float timeBetweenShots = .001f;
 
+    public WeaponSwitching ws;
+
     public Camera fpsCam;
 
 
@@ -25,6 +27,7 @@ public class Guns : MonoBehaviour
 
     ParticleSystem ps;
     bool isShooting;
+    int currentWeapon = 0;
    // private IEnumerator shoot;
     //VRStandardAssets.Utils.VREyeRaycaster rc;
     public AudioSource bang;
@@ -40,14 +43,14 @@ public class Guns : MonoBehaviour
         isShooting = false;
 
 
+        ws = GetComponentInParent<WeaponSwitching>();
+
+        
+
       
         bang = GetComponent<AudioSource>();
         btn = GetComponentInChildren<Button>();
         btn.onClick.AddListener(ButtonClick);
-
-        
-
-
 
     }
 
@@ -57,7 +60,16 @@ public class Guns : MonoBehaviour
         if (!isShooting)
         {
             ps.Play();
-            bang.Play();
+
+
+            // bang should be set in the set weapon stats function
+            // protecting this line until I have ak47 audio clips
+            currentWeapon = ws.currentWeapon;
+            if (currentWeapon == 0)
+            {
+                bang.Play();
+            }
+
             isShooting = true;
 
 
@@ -72,7 +84,9 @@ public class Guns : MonoBehaviour
 
     void Shoot()
     {
-       // isShooting = false;
+        // isShooting = false;
+
+        SetCurrentWeaponStats();
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
@@ -100,5 +114,26 @@ public class Guns : MonoBehaviour
         //rc.enabled = true;
         isShooting = false;
 
+    }
+    
+    void SetCurrentWeaponStats()
+    {
+        currentWeapon = ws.currentWeapon;
+        switch(currentWeapon)
+        {
+            case 0:
+                // handgun
+                damage = 10f;
+                timeBetweenShots = .001f;
+                break;
+            case 1:
+                // ak 47
+                damage = 3f;
+                timeBetweenShots = .0001f;
+                break;
+            default:
+                // should not be reachable
+                break;
+        }
     }
 }

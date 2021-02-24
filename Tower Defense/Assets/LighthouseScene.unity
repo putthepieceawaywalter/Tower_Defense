@@ -5699,7 +5699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.10234961, g: 0.27236947, b: 0.9433962, a: 1}
+  m_Color: {r: 0.10234961, g: 0.27236947, b: 0.9433962, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5879,6 +5879,7 @@ MonoBehaviour:
   totalTypesOfWeapons: 2
   ws: {fileID: 0}
   switchCanvas: {fileID: 0}
+  swCanvas: SwitchWeaponCanvas
   switchWeapon: {fileID: 765520522}
 --- !u!1 &1401826513
 GameObject:
@@ -6377,13 +6378,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1541847173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db77497f0d384ff42961cf53ad5c8377, type: 3}
+  m_Script: {fileID: 11500000, guid: e34b683462440594888b6323fc029f3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
   range: 100
   timeBetweenShots: 0.001
+  ws: {fileID: 0}
   fpsCam: {fileID: 151086945}
+  bang: {fileID: 0}
   btn: {fileID: 621611253}
 --- !u!1 &1546448914
 GameObject:
@@ -6722,6 +6725,7 @@ MonoBehaviour:
   damage: 10
   range: 100
   timeBetweenShots: 0.33
+  ws: {fileID: 0}
   fpsCam: {fileID: 151086945}
   bang: {fileID: 1604161193}
   btn: {fileID: 1546448916}
