@@ -5872,15 +5872,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1399250397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a52e35f4cb909f4eb3108d7985c6b28, type: 3}
+  m_Script: {fileID: 11500000, guid: d29c33153b5357a4d97b6cfcf6f4ef4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: 1
+  currentWeapon: 0
   totalTypesOfWeapons: 2
-  ws: {fileID: 0}
+  guns: {fileID: 0}
+  handgunBullets: 10
+  akBullets: 20
+  handgunClip: 10
+  akClip: 20
+  handgunRepeat: 0.75
+  akRepeat: 0.33
+  handgunDamage: 10
+  akDamage: 4
+  bullets: 
+  clipSize: 
+  bulletsInClip: 
+  repeatRates: []
+  damage: []
   switchCanvas: {fileID: 0}
   swCanvas: SwitchWeaponCanvas
-  switchWeapon: {fileID: 765520522}
+  switchWeapon: {fileID: 0}
 --- !u!1 &1401826513
 GameObject:
   m_ObjectHideFlags: 0
@@ -6369,7 +6382,103 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 296911495}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1541847177
+--- !u!82 &1541847177
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541847173}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 38b450e2adcb6f542acc8c1d423bd8dc, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1541847178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6378,16 +6487,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1541847173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e34b683462440594888b6323fc029f3a, type: 3}
+  m_Script: {fileID: 11500000, guid: b86c4acbc060b504aa2685a58ff6e6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 0
   range: 100
-  timeBetweenShots: 0.001
-  ws: {fileID: 0}
+  repeatRate: 0
+  bullets: 0
+  clipSize: 0
+  bulletsInClip: 0
+  reloadTime: 1
   fpsCam: {fileID: 151086945}
+  holster: {fileID: 0}
   bang: {fileID: 0}
-  btn: {fileID: 621611253}
+  btn: {fileID: 0}
 --- !u!1 &1546448914
 GameObject:
   m_ObjectHideFlags: 0
@@ -6614,6 +6727,29 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 134194581}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1604161191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604161190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b86c4acbc060b504aa2685a58ff6e6a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  range: 100
+  repeatRate: 0
+  bullets: 0
+  clipSize: 0
+  bulletsInClip: 0
+  reloadTime: 1
+  fpsCam: {fileID: 151086945}
+  holster: {fileID: 0}
+  bang: {fileID: 0}
+  btn: {fileID: 0}
 --- !u!82 &1604161193
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6710,25 +6846,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1604161194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604161190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e34b683462440594888b6323fc029f3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  range: 100
-  timeBetweenShots: 0.33
-  ws: {fileID: 0}
-  fpsCam: {fileID: 151086945}
-  bang: {fileID: 1604161193}
-  btn: {fileID: 1546448916}
 --- !u!1 &1704385500
 GameObject:
   m_ObjectHideFlags: 0
