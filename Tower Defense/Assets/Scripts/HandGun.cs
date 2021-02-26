@@ -59,7 +59,7 @@ public class HandGun : MonoBehaviour
 
         bullets.SetValue(handgunBullets, 0);
         bullets.SetValue(akBullets, 1);
-        bulletsInClip.SetValue(akBullets, 0);
+        bulletsInClip.SetValue(akBullets, 1);
         bulletsInClip.SetValue(akBullets, 1);
 
         clipSize.SetValue(handgunClip, 0);

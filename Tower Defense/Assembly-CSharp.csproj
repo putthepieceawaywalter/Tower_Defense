@@ -62,10 +62,12 @@
     <Compile Include="Assets\Scripts\User.cs" />
     <Compile Include="Assets\Scripts\AKGunBehavior.cs" />
     <Compile Include="Assets\Scripts\GyroCamera.cs" />
+    <Compile Include="Assets\Scripts\HandGun.cs" />
     <Compile Include="Assets\Scripts\SwitchWeaponButton.cs" />
     <Compile Include="Assets\Scripts\EnemyCount.cs" />
     <Compile Include="Assets\Scripts\isAttacking.cs" />
-    <Compile Include="Assets\Scripts\HandGun.cs" />
+    <Compile Include="Assets\Scripts\Holster.cs" />
+    <Compile Include="Assets\Scripts\Guns.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
