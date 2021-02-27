@@ -15,9 +15,11 @@ EnemyController.cs            Controls the movements and actions of the enemy
 
 EnemyCount.cs                 Controls the current amount and the spawn locations of the enemy.
 
-Guns.cs                       Controls which gun is selected and its properties.
+Guns.cs                       Controls the RayCaster, inherits all relevant gun properties from Holster.cs.
 
 GyroCamera.cs                 Uses the accelerometer in the user's device to control camera movement.
+
+Holster.cs                    Controls weapon switching. Contains hard coded info about guns such as damage and current info such as remaining bullets.
 
 MouseCamera.cs                Allows the use of the mouse to pan the camera when testing the application on a pc.
 
