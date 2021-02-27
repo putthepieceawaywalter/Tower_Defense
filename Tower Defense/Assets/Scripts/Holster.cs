@@ -11,12 +11,12 @@ public class Holster : MonoBehaviour
 
     public Guns guns;
 
-    public int handgunBullets = 20;
+    public int handgunBullets = 10;
     public int akBullets = 50;
     public int handgunClip = 10;
     public int akClip = 20;
-    public float handgunRepeat = .001f;
-    public float akRepeat = .0001f;
+    public float handgunRepeat = 2f;
+    public float akRepeat = 1f;
     public float handgunDamage = 10f;
     public float akDamage = 4f;
 
@@ -84,9 +84,6 @@ public class Holster : MonoBehaviour
             currentWeapon = 0;
             SelectWeapon();
         }
-
-
-
     }
 
     void ButtonClick()
@@ -124,7 +121,6 @@ public class Holster : MonoBehaviour
 
                 //  public void SetCurrentWeaponStats(float setDamage, int setBullets, int setClipSize, int setBulletsInClip, float setRepeatRate)
                 guns.SetCurrentWeaponStats(damage[i], bullets[i], clipSize[i], bulletsInClip[i], repeatRates[i]);
-
 
             }
             else

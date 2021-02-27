@@ -5878,12 +5878,12 @@ MonoBehaviour:
   currentWeapon: 0
   totalTypesOfWeapons: 2
   guns: {fileID: 0}
-  handgunBullets: 20
-  akBullets: 50
+  handgunBullets: 10
+  akBullets: 20
   handgunClip: 10
   akClip: 20
-  handgunRepeat: 0.001
-  akRepeat: 0.0001
+  handgunRepeat: 0.75
+  akRepeat: 0.33
   handgunDamage: 10
   akDamage: 4
   bullets: 

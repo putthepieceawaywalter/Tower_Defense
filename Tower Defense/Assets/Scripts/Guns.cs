@@ -26,18 +26,6 @@ public class Guns : MonoBehaviour
     public float reloadTime = 1f;
 
 
-    //public int[] bullets;
-    //public int[] clipSize;
-    //public int[] bulletsInClip;
-
-    //public int handgunBullets = 20;
-    //public int akBullets = 50;
-    //public int handgunClip = 10;
-    //public int akClip = 2;
-
-    //public int totalWeapons = 2;
-
-    // public WeaponSwitching ws;
 
     public Camera fpsCam;
 
@@ -90,6 +78,7 @@ public class Guns : MonoBehaviour
             else
             {
                 // out of bullets for this gun
+                Debug.Log("You are out of bullets!");
             }
 
 
@@ -143,23 +132,7 @@ public class Guns : MonoBehaviour
 
     void Reload()
     {
-
-
-
-        //if (bullets[currentWeapon] > clipSize[currentWeapon])
-        //{
-        //    bulletsInClip[currentWeapon] = clipSize[currentWeapon];
-        //    bullets[currentWeapon] = bullets[currentWeapon] - clipSize[currentWeapon];
-
-        //}
-        //else
-        //{
-        //    // there are bullets remaining but not enough to fill the clip
-
-        //    bulletsInClip[currentWeapon] = bullets[currentWeapon];
-        //    bullets[currentWeapon] = 0;
-
-        //}
+       
 
         if (bullets > 0)
         {
@@ -174,6 +147,7 @@ public class Guns : MonoBehaviour
                 bulletsInClip = bullets;
                 bullets = 0;
             }
+            Debug.Log("Reloading \t bullets remaining: " + bullets);
         }
         else
         {
