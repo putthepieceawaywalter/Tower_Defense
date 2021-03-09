@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 34135500}
   - component: {fileID: 34135502}
   - component: {fileID: 34135501}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muzzle Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5062,6 +5062,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Handgun
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7d3e381b0d85d9f44925d515130ce3c1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 7d3e381b0d85d9f44925d515130ce3c1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 7d3e381b0d85d9f44925d515130ce3c1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 7d3e381b0d85d9f44925d515130ce3c1, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7d3e381b0d85d9f44925d515130ce3c1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5287,7 +5303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 213690531}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AK-47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5381,6 +5397,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AK-47
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33140838c2744414da0b673fc7b67d9a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33140838c2744414da0b673fc7b67d9a, type: 3}
 --- !u!1 &440321993
@@ -5395,7 +5416,7 @@ GameObject:
   - component: {fileID: 440321997}
   - component: {fileID: 440321996}
   - component: {fileID: 440321995}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5495,7 +5516,7 @@ GameObject:
   - component: {fileID: 621611255}
   - component: {fileID: 621611254}
   - component: {fileID: 621611253}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Shoot Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5830,6 +5851,116 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1292593065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1292593068}
+  - component: {fileID: 1292593067}
+  - component: {fileID: 1292593066}
+  - component: {fileID: 1292593070}
+  - component: {fileID: 1292593069}
+  m_Layer: 0
+  m_Name: GunCam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1292593066
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292593065}
+  m_Enabled: 1
+--- !u!20 &1292593067
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292593065}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 3
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1292593068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292593065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1292593069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292593065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a943ffc58b399cdba85c570df341891e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1292593070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292593065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ceff690949e98dc80fcd12ad02b754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _smoothing: 0.1
 --- !u!1 &1399250397
 GameObject:
   m_ObjectHideFlags: 0
@@ -5840,7 +5971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1399250398}
   - component: {fileID: 1399250399}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Holster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6513,7 +6644,7 @@ GameObject:
   - component: {fileID: 1546448918}
   - component: {fileID: 1546448917}
   - component: {fileID: 1546448916}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Shoot Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6633,7 +6764,7 @@ GameObject:
   - component: {fileID: 1552345046}
   - component: {fileID: 1552345045}
   - component: {fileID: 1552345044}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6934,7 +7065,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1718693068}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Handgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6967,7 +7098,7 @@ GameObject:
   - component: {fileID: 1869938285}
   - component: {fileID: 1869938287}
   - component: {fileID: 1869938286}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muzzle Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
