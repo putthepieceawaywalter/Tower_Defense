@@ -5,9 +5,17 @@ ScriptsOnlyBuild:
     - EnemyCount
     - Guns
     - GyroCamera
+    - Holster
     - TowerDefense.MouseCamera
+    - User
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -19,6 +27,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/LighthouseScene.unity:
     - Class: 1
@@ -62,30 +71,38 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1496}
+      Script: {instanceID: 1500}
     - Class: 114
-      Script: {instanceID: 1824}
+      Script: {instanceID: 1638}
+    - Class: 114
+      Script: {instanceID: 1830}
     - Class: 114
       Script: {instanceID: 1880}
     - Class: 114
-      Script: {instanceID: 2310}
+      Script: {instanceID: 2206}
     - Class: 114
-      Script: {instanceID: 2606}
+      Script: {instanceID: 2316}
     - Class: 114
-      Script: {instanceID: 2620}
+      Script: {instanceID: 2516}
     - Class: 114
-      Script: {instanceID: 2786}
+      Script: {instanceID: 2616}
     - Class: 114
-      Script: {instanceID: 3002}
+      Script: {instanceID: 2630}
     - Class: 114
-      Script: {instanceID: 3172}
+      Script: {instanceID: 2796}
     - Class: 114
-      Script: {instanceID: 3302}
+      Script: {instanceID: 3014}
     - Class: 114
-      Script: {instanceID: 3434}
+      Script: {instanceID: 3184}
     - Class: 114
-      Script: {instanceID: 14854}
+      Script: {instanceID: 3316}
+    - Class: 114
+      Script: {instanceID: 3448}
+    - Class: 114
+      Script: {instanceID: 14966}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
@@ -148,6 +165,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Toggle
+  - hash:
+      serializedVersion: 2
+      Hash: 8aebf64325442c2154986775b7652e17
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Holster
   - hash:
       serializedVersion: 2
       Hash: 0dbc3be398b4869a5c8d0d8481ee402c
@@ -234,16 +257,16 @@ ScriptsOnlyBuild:
     className: PlayModeRunnerCallback
   - hash:
       serializedVersion: 2
+      Hash: 33ec8f189da1e34377f5e0b1b7bbb270
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Guns
+  - hash:
+      serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 1675c779489714a92cc4bdd749b63bfe
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Guns
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -312,7 +335,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 6a3b102a08fbf44013f45dd807d69054
+      Hash: 5bf646711f21ad260f6bb33a81ae9649
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyController
@@ -342,6 +365,12 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
+      Hash: c4e17c1f6352497cc7f8ce6fe59ea046
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: User
+  - hash:
+      serializedVersion: 2
       Hash: 908b3077da284d11de0450423ca1808e
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -352,6 +381,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 2d5bf647eb32ac5a3ae54d07a73628aa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AKGunBehavior
   - hash:
       serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
@@ -432,6 +467,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SwitchWeaponButton
+  - hash:
+      serializedVersion: 2
       Hash: 5cc439bf63c0539d39588e69465ac2ab
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -480,10 +521,16 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: 71b54f2585d49d798a42a28c1ecacfaa
+      Hash: 0f0127d5217be04682e83b55a5240c32
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyCount
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: isAttacking
   - hash:
       serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
@@ -559,4 +606,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/LighthouseScene.unity
-  playerPath: C:/Users/putth/clone/release.aab
+  playerPath: C:/Users/putth/clone/002.aab
