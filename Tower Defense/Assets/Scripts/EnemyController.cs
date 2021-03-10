@@ -141,8 +141,35 @@ public class EnemyController : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            // random chance they start running at the user
+            int run = Random.Range(1, 10);
+            if (run > 7)
+            {
+                animator.SetBool("isRunning", true);
+                setAllSpeedsFalse();
+                isRunning = true;
+                
+            }
+            else
+            {
+                animator.SetBool("isRunning", false);
+                setAllSpeedsFalse();
+                isWalk = true;
+            }
+        }
+
     }
 
+    public void setAllSpeedsFalse()
+    {
+        isWalk = false;
+        isSlowWalk = false;
+        isRunning = false;
+        isAttacking = false;
+
+    }
 
     private IEnumerator AttackUser()
     {
