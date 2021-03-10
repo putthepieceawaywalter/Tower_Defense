@@ -35,7 +35,7 @@ public class Guns : MonoBehaviour
 
     ParticleSystem ps;
     bool isShooting;
-    int currentWeapon = 0;
+    //int currentWeapon = 0;
     // private IEnumerator shoot;
     //VRStandardAssets.Utils.VREyeRaycaster rc;
     public AudioSource bang;
