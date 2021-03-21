@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "377369160154",
+    "project_id": "tower-defense-59b56",
+    "storage_bucket": "tower-defense-59b56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377369160154:android:c567ff8138d5cc714fb8e3",
+        "android_client_info": {
+          "package_name": "com.McDanielSoftware.TowerDefense"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377369160154-02csn6bja72cne1nbvj5eb93054a6ovu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ7dma2BcIRb0XYNUwZhNWCnm3DOulVYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377369160154-02csn6bja72cne1nbvj5eb93054a6ovu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

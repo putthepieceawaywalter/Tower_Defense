@@ -68,6 +68,29 @@
     <Compile Include="Assets\Scripts\isAttacking.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\Parse\Plugins\Unity.Compat.dll" />
+     <None Include="Assets\Firebase\Plugins\Firebase.Analytics.dll" />
+     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppDatabase.dll" />
+     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Analytics.dll" />
+     <None Include="Assets\Firebase\Plugins\Firebase.App.dll" />
+     <None Include="Assets\Parse\Plugins\Unity.Tasks.dll" />
+     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppAnalytics.dll" />
+     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppAuth.dll" />
+     <None Include="Assets\Firebase\Plugins\Firebase.TaskExtension.dll" />
+     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
+     <None Include="Assets\Firebase\Plugins\Firebase.Auth.dll" />
+     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppApp-7_1_0.dll" />
+     <None Include="Assets\Firebase\Plugins\Firebase.Database.dll" />
+     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-analytics-unity\maven-metadata.xml" />
+     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-auth-unity\maven-metadata.xml" />
+     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Auth.dll" />
+     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Database.dll" />
+     <None Include="Assets\Parse\Plugins\dotNet45\Unity.Compat.dll" />
+     <None Include="Assets\Firebase\Plugins\Firebase.Platform.dll" />
+     <None Include="Assets\Parse\Plugins\dotNet45\Unity.Tasks.dll" />
+     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-database-unity\maven-metadata.xml" />
+     <None Include="Assets\Firebase\Plugins\Google.MiniJson.dll" />
+     <None Include="Assets\Firebase\Plugins\iOS\Firebase.App.dll" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.1f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -281,8 +304,41 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.1f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="Firebase.Auth">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Analytics">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.TaskExtension">
+      <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.MiniJson">
+      <HintPath>Assets\Firebase\Plugins\Google.MiniJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tasks">
+      <HintPath>Assets\Parse\Plugins\dotNet45\Unity.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Platform">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Compat">
+      <HintPath>Assets\Parse\Plugins\dotNet45\Unity.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.App">
+      <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.5\net35\unity-custom\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.1f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.1f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.2.1f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
