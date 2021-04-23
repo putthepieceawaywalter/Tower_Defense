@@ -3,3 +3,6 @@
 [Ll]ibrary/
 [Ff]irebase/
 [Ll]ogs/
+[Tt]emp/
+.vs/
+.vsconfig
