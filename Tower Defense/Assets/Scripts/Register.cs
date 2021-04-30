@@ -7,11 +7,7 @@ using UnityEngine.UI;
 
 public class Register : MonoBehaviour
 {
-    Firebase.FirebaseApp app;
-
-
-
-
+    //Firebase.FirebaseApp app;
     Firebase.Auth.FirebaseAuth auth;
 
     public TMP_InputField email;
@@ -34,28 +30,8 @@ public class Register : MonoBehaviour
         RegisterButton.onClick.AddListener(OnClickRegister);
 
         // this code is required to confirm google play service version requirements.
-        Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
-            var dependencyStatus = task.Result;
-            if (dependencyStatus == Firebase.DependencyStatus.Available)
-            {
-                // Create and hold a reference to your FirebaseApp,
-                // where app is a Firebase.FirebaseApp property of your application class.
-                app = Firebase.FirebaseApp.DefaultInstance;
 
-                // Set a flag here to indicate whether Firebase is ready to use by your app.
-                Debug.Log("Firebase is fired up");
-                isReady = true;
-                init();
-            }
-            else
-            {
-                Debug.Log("firebase not working");
-                UnityEngine.Debug.LogError(System.String.Format(
-                  "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
-                // Firebase Unity SDK is not safe to use here.
-            }
-        });
-
+        //app = GetComponentInParent<Firebase.FirebaseApp>();
 
     }
 
@@ -133,34 +109,11 @@ public class Register : MonoBehaviour
 
     public void init()
     {
+        // this cannot be run in start method because it needs to be run after CheckAndFixDependenciesAsync is finished.
+ 
         
         auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
-//        Debug.Log(auth.ToString());
-//        Debug.Log("jkkjdfkjdf");
 
-//        // 
-////        email = GetComponentInChildren<TMP_InputField>();
-
-//        password = GetComponentInChildren<TMP_InputField>();
-
-//        Debug.Log("oops");
-
-//        //// TO DO:
-//        // password.inputType = TMP_InputField.InputType.Password;
-//        // password.contentType = TMP_InputField.ContentType.Password;
-
-//        // assign buttons
-//        RegisterButton = GetComponentInChildren<Button>();
-//        RegisterButton.onClick.AddListener(OnClickRegister);
-
-        //LoginButton = GetComponentInChildren<Button>();
-        //LoginButton.onClick.AddListener(Login);
-
-        //if (RegisterButton == null)
-        //{
-        //    Debug.Log("oops");
-        //}
-        //Debug.Log("exiting init");
     }
 
 }
