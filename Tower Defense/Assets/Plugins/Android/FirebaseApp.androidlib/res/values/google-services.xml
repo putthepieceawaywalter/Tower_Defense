@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id" xmlns:tools="http://schemas.android.com/tools">
+  <string name="gcm_defaultSenderId" translatable="false">1008852089197</string>
+  <string name="google_storage_bucket" translatable="false">tower-defense-8e140.appspot.com</string>
+  <string name="project_id" translatable="false">tower-defense-8e140</string>
+  <string name="google_api_key" translatable="false">AIzaSyAuaONQdjOJhxI8zMmL_4KHIIX2YDdlsGI</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAuaONQdjOJhxI8zMmL_4KHIIX2YDdlsGI</string>
+  <string name="google_app_id" translatable="false">1:1008852089197:android:e21e632c55750a1b928264</string>
+  <string name="default_web_client_id" translatable="false">1008852089197-47ai7981jjl287v4ea8rmcafr0tm1uf7.apps.googleusercontent.com</string>
+</resources>
