@@ -38,10 +38,11 @@ public class Register : MonoBehaviour
     public void OnClickRegister()
     {
         Debug.Log("register");
-        if (!isReady)
-        {
-            init();
-        }
+        //if (!isReady)
+        //{
+        //    init();
+        //}
+        init();
         Debug.Log("Register Button clicked");
         Debug.Log("Email: " + email.text.ToString());
         Debug.Log("Pass: " + password.text.ToString());
@@ -70,42 +71,6 @@ public class Register : MonoBehaviour
     }
 
 
-    //TO DO:
-        // logging in will be a different menu and corresponding script.  This code will go there once it is created.
-
-    //public void Login()
-    //{
-    //    if (!isReady)
-    //    {
-    //        init();
-    //    }
-    //    auth.SignInWithEmailAndPasswordAsync(email.text.ToString(), password.text.ToString()).ContinueWith(task =>
-    //    {
-    //        if (task.IsCanceled)
-    //        {
-    //            Debug.LogError("SignInWithEmailAndPasswordAsync was canceled.");
-    //            return;
-    //        }
-    //        if (task.IsFaulted)
-    //        {
-    //            Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error: " + task.Exception);
-    //            return;
-    //        }
-
-    //        Firebase.Auth.FirebaseUser newUser = task.Result;
-    //        Debug.LogFormat("User signed in successfully: {0} ({1})",
-    //            newUser.DisplayName, newUser.UserId);
-    //    });
-
-
-
-    //    // TO DO: verify that user has signed in correclty.
-    //    // inform them either way
-    //    // if login has failed give them useful info (user not found or something)
-
-
-    //    SceneManager.LoadScene(firstLevel.ToString()) ;
-    //}
 
     public void init()
     {
@@ -113,6 +78,7 @@ public class Register : MonoBehaviour
  
         
         auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+
 
     }
 

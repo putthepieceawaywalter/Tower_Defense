@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\Register.cs" />
     <Compile Include="Assets\Scripts\MouseCamera.cs" />
     <Compile Include="Assets\Scripts\Guns.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\User.cs" />
     <Compile Include="Assets\Scripts\AKGunBehavior.cs" />
@@ -67,7 +68,7 @@
     <Compile Include="Assets\Scripts\SwitchWeaponButton.cs" />
     <Compile Include="Assets\Scripts\EnemyCount.cs" />
     <Compile Include="Assets\Scripts\isAttacking.cs" />
-    <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Login.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

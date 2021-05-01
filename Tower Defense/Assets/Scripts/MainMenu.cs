@@ -12,6 +12,17 @@ public class MainMenu : MonoBehaviour
     public Button LoginButton;
     public Button RegisterButton;
     public Button AboutButton;
+
+
+    private string About = "About";
+    private string Register = "Register";
+    private string Login = "Login";
+
+    // play should go to a level select screen which will show the user the levels they have unlocked.
+    // in the mean time it will just take the user directly to the only level that is implemented
+
+    private string Play = "LighthouseScene";
+
     
     // Start is called before the first frame update
 
@@ -25,6 +36,11 @@ public class MainMenu : MonoBehaviour
        
        
         RegisterButton.onClick.AddListener(OnClickRegister);
+        AboutButton.onClick.AddListener(OnClickAbout);
+        LoginButton.onClick.AddListener(OnClickLogin);
+        PlayButton.onClick.AddListener(OnClickPlay);
+
+
         
 
 
@@ -54,9 +70,21 @@ public class MainMenu : MonoBehaviour
     void OnClickRegister()
     {
         // take user to registration scene
-        SceneManager.LoadScene("Register");
+        SceneManager.LoadScene(Register);
     }
-    
+    void OnClickAbout()
+    {
+        SceneManager.LoadScene(About);
+    }
 
+    void OnClickLogin()
+    {
+        SceneManager.LoadScene(Login);
+    }
+
+    void OnClickPlay()
+    {
+        SceneManager.LoadScene(Play);
+    }
 
 }
