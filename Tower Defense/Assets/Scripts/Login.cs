@@ -25,8 +25,8 @@ public class Login : MonoBehaviour
     void Start()
     {
 
-        email = GetComponentInChildren<TMP_InputField>();
-        password = GetComponentInChildren<TMP_InputField>();
+        email = GameObject.Find("Email").GetComponentInChildren<TMP_InputField>();
+        password = GameObject.Find("Password").GetComponentInChildren<TMP_InputField>();
 
         // assign buttons
         LoginButton = GetComponentInChildren<Button>();
@@ -37,19 +37,11 @@ public class Login : MonoBehaviour
 
      
     }
-    private void OnGUI()
-    {
-        if (!loggedIn)
-        {
-            if (GUI.Button(new Rect(10, 10, 150, 100), "Failed to log in, try again"))
-            {
-                print("You clicked the button!");
-            }
-        }
-    }
-
     public void OnClickLogin()
     {
+
+        Debug.Log("Email: " + email.text.ToString());
+        Debug.Log("Password: " + password.text.ToString());
         auth.SignInWithEmailAndPasswordAsync(email.text.ToString(), password.text.ToString()).ContinueWith(task =>
         {
             if (task.IsCanceled)
@@ -64,13 +56,13 @@ public class Login : MonoBehaviour
                 Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error: " + task.Exception);
                 loggedIn = false;
 
-
             }
             else
             {
                 Firebase.Auth.FirebaseUser newUser = task.Result;
                 Debug.LogFormat("User signed in successfully: {0} ({1})",
-                    newUser.DisplayName, newUser.UserId);
+                    newUser.Email, newUser.UserId);
+                
                 loggedIn = true;
 
             }
@@ -85,7 +77,6 @@ public class Login : MonoBehaviour
     private void init()
     {
         auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
-
     }
     private void LoadScene()
     {
