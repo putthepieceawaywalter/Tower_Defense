@@ -15,9 +15,6 @@ public class EnemyCount : MonoBehaviour
 
     public GameObject[] enemies;
 
-    public AudioSource audio;
-
-
 
     //public EnemyController ec;
 
@@ -40,9 +37,10 @@ public class EnemyCount : MonoBehaviour
     void Start()
     {
 
-
+       
 
         enemies = new GameObject[enemyTotal];
+
 
         startPoints[0] = spawnPoint1;
         startPoints[1] = spawnPoint2;
@@ -61,11 +59,6 @@ public class EnemyCount : MonoBehaviour
     void Update()
     {
 
-        if (enemies[0] != null)
-        {
-            // play zombie hoard audio effect
-
-        }
 
         if (!isSpawning)
         {

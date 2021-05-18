@@ -7,13 +7,15 @@ public class User : MonoBehaviour
 {
 
     public float health = 100;
-    // Start is called before the first frame update
+    //public AudioSource attackClip;
+
+
     void Start()
     {
 
-
-
-        
+        //attackClip = GetComponent<AudioSource>();
+       // attackClip = GameObject.Find("AudioSource").GetComponent<AudioSource>();
+       
     }
 
     // Update is called once per frame
@@ -25,6 +27,9 @@ public class User : MonoBehaviour
    public void TakeDamage(float damage)
     {
         health -= damage;
+
+        //attackClip.Play();
+        
         if (health <= 0)
         {
 

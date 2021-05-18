@@ -16,17 +16,17 @@ public class EnemyController : MonoBehaviour
 
     public float attackInterval = 2.63f;
 
+    AudioSource attackClip;
 
     public float health = 50f;
    
 
-    //VRInteractiveItem vriChild;
+  
     Animator animator;
 
 
     public BoxCollider collider;
 
-    //SpawnManagerLighthouse spawnManager;
 
     public bool isDead = false;
     public bool isAttacking = false;
@@ -46,21 +46,23 @@ public class EnemyController : MonoBehaviour
     {
         //vriChild = GetComponentInChildren<VRInteractiveItem>();
         collider = GetComponentInChildren<BoxCollider>();
-
+        attackClip = GetComponent<AudioSource>();
         animator = GetComponentInParent<Animator>();
 
-        //user = GetComponentInParent<User>();
-     
+       
     }
 
     private float moveSpeed;
     // Start is called before the first frame update
     void Start()
     {
+        
 
 
        // this rotates the enemy to look at the user
        transform.LookAt(target);
+
+        //user = GetComponentInParent<User>();
     }
 
     // Update is called once per frame
@@ -82,7 +84,7 @@ public class EnemyController : MonoBehaviour
         }
         else if (isWalk)
         {
-            moveSpeed = .5f;
+            moveSpeed = 4f;
         }
         else if (isRunning)
         {
@@ -115,6 +117,7 @@ public class EnemyController : MonoBehaviour
 
                 user.TakeDamage(damage);
                 StartCoroutine(AttackUser());
+                attackClip.Play();
             }
 
         }
@@ -125,6 +128,7 @@ public class EnemyController : MonoBehaviour
     // called when an enemy dies
     void Die()
     {
+        //AudioSource.DestroyImmediate(attackClip, true);
         animator.SetBool("isDying", true);
         isDead = true;
         StopCoroutine(AttackUser());
