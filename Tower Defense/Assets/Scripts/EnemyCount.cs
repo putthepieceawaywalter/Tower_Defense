@@ -15,6 +15,7 @@ public class EnemyCount : MonoBehaviour
 
     public GameObject[] enemies;
 
+    public AudioSource audio;
 
 
 
@@ -59,6 +60,12 @@ public class EnemyCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (enemies[0] != null)
+        {
+            // play zombie hoard audio effect
+
+        }
 
         if (!isSpawning)
         {
