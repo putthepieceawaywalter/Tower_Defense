@@ -16,8 +16,8 @@ public class EnemyController : MonoBehaviour
 
     public float attackInterval = 2.63f;
 
-    AudioSource attackClip;
-
+    public AudioSource attackClip;
+    public bool isAudioPlaying;
     public float health = 50f;
    
 
@@ -48,6 +48,7 @@ public class EnemyController : MonoBehaviour
         collider = GetComponentInChildren<BoxCollider>();
         attackClip = GetComponent<AudioSource>();
         animator = GetComponentInParent<Animator>();
+        isAudioPlaying = false;
 
        
     }
@@ -84,11 +85,11 @@ public class EnemyController : MonoBehaviour
         }
         else if (isWalk)
         {
-            moveSpeed = 4f;
+            moveSpeed = .5f;
         }
         else if (isRunning)
         {
-            moveSpeed = 1f;
+            moveSpeed = 2f;
         }
         else
         {
@@ -108,16 +109,21 @@ public class EnemyController : MonoBehaviour
             // begin attacking
             if (!isAttacking)
             {
+                if (!isAudioPlaying)
+                {
+                    PlayAudio();
+                }
 
                 float damage = Random.Range(1, 10);
                 isAttacking = true;
-                //Attack();
                 animator.SetBool("isAttacking", true);
 
 
                 user.TakeDamage(damage);
                 StartCoroutine(AttackUser());
-                attackClip.Play();
+
+
+                
             }
 
         }
@@ -129,12 +135,19 @@ public class EnemyController : MonoBehaviour
     void Die()
     {
         //AudioSource.DestroyImmediate(attackClip, true);
+        attackClip.Stop();
         animator.SetBool("isDying", true);
         isDead = true;
         StopCoroutine(AttackUser());
         UnityEngine.Object.Destroy(gameObject, 5f);
 
 
+    }
+
+    void PlayAudio()
+    {
+        isAudioPlaying = true;
+        attackClip.Play();
     }
 
 
@@ -173,6 +186,7 @@ public class EnemyController : MonoBehaviour
         isAttacking = false;
 
     }
+
     private IEnumerator AttackUser()
     {
         yield return new WaitForSeconds(attackInterval);
