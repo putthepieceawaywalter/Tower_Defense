@@ -121,7 +121,7 @@ public class EnemyController : MonoBehaviour
 
                 if (user.health > 0)
                 {
-                    user.TakeDamage(damage);
+                    user.TakeUserDamage(damage);
                 }
                 
                
@@ -171,20 +171,25 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            int run = Random.Range(1, 10);
-            if (run > 7)
-            {
-                animator.SetBool("isRunning", true);
-                setAllSpeedsFalse();
-                isRunning = true;
 
-            }
-            else
+            if (Vector3.Distance(this.transform.position, userPosition) > 1.5f)
             {
-                animator.SetBool("isRunning", false);
-                setAllSpeedsFalse();
-                isWalk = true;
+                int run = Random.Range(1, 10);
+                if (run > 7)
+                {
+                    animator.SetBool("isRunning", true);
+                    setAllSpeedsFalse();
+                    isRunning = true;
+
+                }
+                else
+                {
+                    animator.SetBool("isRunning", false);
+                    setAllSpeedsFalse();
+                    isWalk = true;
+                }
             }
+
         }
     }
 
@@ -201,6 +206,9 @@ public class EnemyController : MonoBehaviour
     private IEnumerator AttackUser()
     {
         yield return new WaitForSeconds(attackInterval);
+
+
+    
         isAttacking = false;
     }
 

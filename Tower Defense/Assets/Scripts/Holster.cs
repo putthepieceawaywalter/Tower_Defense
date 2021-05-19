@@ -85,6 +85,9 @@ public class Holster : MonoBehaviour
             currentWeapon = 0;
             SelectWeapon();
         }
+
+        bullets[currentWeapon] = guns.bullets;
+        bulletsInClip[currentWeapon] = guns.bulletsInClip;
     }
 
     void ButtonClick()

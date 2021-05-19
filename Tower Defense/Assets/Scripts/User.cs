@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class User : MonoBehaviour
 {
@@ -15,29 +16,34 @@ public class User : MonoBehaviour
     public Button menuButton;
     public Button restartLevelButton;
 
-
     // this button is availble during gameplay
     public Button pauseButton;
 
     Scene lighthouse;
     Scene mainMenu;
 
-    public TextMesh healthText;
+    public TMP_Text healthText;
+    public TMP_Text ammoText;
 
-    public Guns currentWeapons;
+    public Guns guns;
+    public Holster holster;
 
     public GameObject dieMenuUI;
     public GameObject pauseMenuUI;
     void Start()
     {
-
-
         mainMenu = SceneManager.GetSceneByName("MainMenu");
         lighthouse = SceneManager.GetSceneByName("LighthouseScene");
         dieMenuUI.SetActive(false);
         pauseMenuUI.SetActive(false);
 
-        //healthText = GameObject.Find("HealthText").GetComponentInChildren<TextMesh>();
+        //guns = GetComponentInChildren<Guns>();
+        holster = GetComponentInChildren<Holster>();
+
+
+        healthText = GameObject.Find("HealthText").GetComponentInChildren<TMP_Text>();
+        ammoText = GameObject.Find("AmmoText").GetComponentInChildren<TMP_Text>();
+
 
         pauseButton = GameObject.Find("PauseButton").GetComponentInChildren<Button>();
         pauseButton.onClick.AddListener(Pause);
@@ -49,12 +55,20 @@ public class User : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //healthText.text = health.ToString();
+        if (health >= 0)
+        {
+            healthText.text = health.ToString();
+        }
+        else
+        {
+            healthText.text = "0";
+        }
 
-
+        ammoText.text = holster.bulletsInClip[holster.currentWeapon].ToString() + " / " + holster.bullets[holster.currentWeapon].ToString();
+        //ammoText.text = guns.bulletsInClip.ToString() + " / " + guns.bullets.ToString();
     }
 
-   public void TakeDamage(float damage)
+   public void TakeUserDamage(float damage)
     {
         health -= damage;
 
@@ -66,24 +80,17 @@ public class User : MonoBehaviour
             // user has died
             // eventually this should play a graphic or something that indicates to the user that they have died
             // for now the scene just reloads
-
-           
         }
-
     }
-
-
 
     public void RestartLevel()
     {
-       
         SceneManager.LoadScene(lighthouse.name);
         isPaused = false;
         Time.timeScale = 1f;
     }
     public void ReturnToMainMenu()
     {
-        
         SceneManager.LoadScene(mainMenu.name);
     }
 
@@ -104,7 +111,6 @@ public class User : MonoBehaviour
         isPaused = true;
         menuButton = GameObject.Find("MainMenuButton").GetComponentInChildren<Button>();
         restartLevelButton = GameObject.Find("ReloadLevelButton").GetComponentInChildren<Button>();
-
     }
 
     public void Resume()
@@ -112,6 +118,5 @@ public class User : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-
     }
 }
