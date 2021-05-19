@@ -81,7 +81,7 @@ public class EnemyController : MonoBehaviour
             // moveSpeed should be .2f
             // the high speed moveSpeed is for demo use only
             // moveSpeed = 1f;
-            moveSpeed = .2f;
+            moveSpeed = .5f;
         }
         else if (isWalk)
         {
@@ -104,7 +104,7 @@ public class EnemyController : MonoBehaviour
         var step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, userPosition, moveSpeed * Time.deltaTime);
         
-        if (Vector3.Distance(this.transform.position, userPosition) < 1.5f)
+        if (Vector3.Distance(this.transform.position, userPosition) < 1.5f && !user.isPaused)
         {
             // begin attacking
             if (!isAttacking)
@@ -119,13 +119,23 @@ public class EnemyController : MonoBehaviour
                 animator.SetBool("isAttacking", true);
 
 
-                user.TakeDamage(damage);
+                if (user.health > 0)
+                {
+                    user.TakeDamage(damage);
+                }
+                
+               
+
                 StartCoroutine(AttackUser());
 
 
                 
             }
 
+        }
+        else if (user.isPaused)
+        {
+            attackClip.Stop();
         }
 
     }
@@ -193,7 +203,16 @@ public class EnemyController : MonoBehaviour
         isAttacking = false;
     }
 
-    
+    //public void Pause()
+    //{
+    //    // stop attacking, turn off audio
+    //    // user has died or paused the game
+    //    isPaused = true;
+    //    attackClip.Stop();
+
+
+
+    //}
 }
 
 

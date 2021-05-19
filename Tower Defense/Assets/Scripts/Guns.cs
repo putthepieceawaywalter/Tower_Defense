@@ -9,11 +9,8 @@ public class Guns : MonoBehaviour
     // Start is called before the first frame update
 
     // this script will control the guns in Tower Defense
-    // for the first iteration everything will be setup for the handgun, eventually several guns will be supported
+    // currently two guns are supported, a handgun and an ak style assault rifle
 
-
-    // the following code is the beginning of removing vreyeraycaster and moving that code over to the gun
-    // this will allow me to manage the muzzle flash, audio clip and shooting mechanics all in one clear and concise file
     public float damage = 0f;
     public float range = 100f;
     public float repeatRate = 0f;
@@ -24,31 +21,24 @@ public class Guns : MonoBehaviour
     public int bulletsInClip;
 
     public float reloadTime = 1f;
-
-
+    public float currentAccuracy;
+    public int shotsHit = 0;
+    public int shotsMissed = 0;
 
     public Camera fpsCam;
 
-
-    public Holster holster;
-
+    //public Holster holster;
 
     ParticleSystem ps;
     bool isShooting;
-    //int currentWeapon = 0;
-    // private IEnumerator shoot;
-    //VRStandardAssets.Utils.VREyeRaycaster rc;
     public AudioSource bang;
     public Button btn;
 
     void Start()
     {
-
-
         ps = GetComponentInChildren<ParticleSystem>();
 
         isShooting = false;
-
 
         bang = GetComponent<AudioSource>();
         btn = GetComponentInChildren<Button>();
@@ -80,8 +70,6 @@ public class Guns : MonoBehaviour
                 // out of bullets for this gun
                 Debug.Log("You are out of bullets!");
             }
-
-
             StartCoroutine(Waiting(repeatRate));
         }
     }
@@ -94,19 +82,25 @@ public class Guns : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            // we have hit something!
+            // user has hit some sort of an object
+            shotsHit++;
             Debug.Log(hit.transform.name);
 
 
             EnemyController enemy = hit.transform.GetComponentInParent<EnemyController>();
             if (enemy != null)
             {
-                // we have hit an enemy!
+                // user has hit an enemy!
                 enemy.TakeDamage(damage);
-
-
             }
 
+        }
+        else
+        {
+            // user has shot the gun but missed all targets
+
+            shotsMissed++;
+            
         }
 
 
@@ -138,12 +132,15 @@ public class Guns : MonoBehaviour
         {
             if (bullets > clipSize)
             {
+                // user has more total bullets remaining than space available in the weapon clip
 
                 bulletsInClip = clipSize;
                 bullets = bullets - clipSize;
             }
             else
             {
+                // user does not have enough bullets remaining to fill clip
+
                 bulletsInClip = bullets;
                 bullets = 0;
             }
@@ -151,6 +148,8 @@ public class Guns : MonoBehaviour
         }
         else
         {
+
+            // oops some dummy called this function in a scenario where the user has 0 bullets
             Exception exception = new Exception();
             throw exception;
         }

@@ -65,10 +65,10 @@
     <Compile Include="Assets\Scripts\User.cs" />
     <Compile Include="Assets\Scripts\AKGunBehavior.cs" />
     <Compile Include="Assets\Scripts\GyroCamera.cs" />
+    <Compile Include="Assets\Scripts\Login.cs" />
     <Compile Include="Assets\Scripts\SwitchWeaponButton.cs" />
     <Compile Include="Assets\Scripts\EnemyCount.cs" />
     <Compile Include="Assets\Scripts\isAttacking.cs" />
-    <Compile Include="Assets\Scripts\Login.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
