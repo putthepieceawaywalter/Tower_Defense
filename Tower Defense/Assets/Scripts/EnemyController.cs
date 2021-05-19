@@ -136,6 +136,7 @@ public class EnemyController : MonoBehaviour
         else if (user.isPaused)
         {
             attackClip.Stop();
+            isAudioPlaying = false;
         }
 
     }
@@ -203,16 +204,7 @@ public class EnemyController : MonoBehaviour
         isAttacking = false;
     }
 
-    //public void Pause()
-    //{
-    //    // stop attacking, turn off audio
-    //    // user has died or paused the game
-    //    isPaused = true;
-    //    attackClip.Stop();
 
-
-
-    //}
 }
 
 

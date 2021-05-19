@@ -9,13 +9,25 @@ public class User : MonoBehaviour
 
     public float health = 100;
     public bool isPaused = false;
+
+    // these buttons are used in both the death menu and pause menu and are only available while
+    // those menus are up
     public Button menuButton;
     public Button restartLevelButton;
+
+
+    // this button is availble during gameplay
+    public Button pauseButton;
 
     Scene lighthouse;
     Scene mainMenu;
 
+    public TextMesh healthText;
+
+    public Guns currentWeapons;
+
     public GameObject dieMenuUI;
+    public GameObject pauseMenuUI;
     void Start()
     {
 
@@ -23,7 +35,12 @@ public class User : MonoBehaviour
         mainMenu = SceneManager.GetSceneByName("MainMenu");
         lighthouse = SceneManager.GetSceneByName("LighthouseScene");
         dieMenuUI.SetActive(false);
+        pauseMenuUI.SetActive(false);
 
+        //healthText = GameObject.Find("HealthText").GetComponentInChildren<TextMesh>();
+
+        pauseButton = GameObject.Find("PauseButton").GetComponentInChildren<Button>();
+        pauseButton.onClick.AddListener(Pause);
         menuButton.onClick.AddListener(ReturnToMainMenu);
         restartLevelButton.onClick.AddListener(RestartLevel);
 
@@ -32,7 +49,9 @@ public class User : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //healthText.text = health.ToString();
+
+
     }
 
    public void TakeDamage(float damage)
@@ -76,5 +95,23 @@ public class User : MonoBehaviour
         isPaused = true;
 
         Time.timeScale = 0f;
+    }
+
+    public void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+        menuButton = GameObject.Find("MainMenuButton").GetComponentInChildren<Button>();
+        restartLevelButton = GameObject.Find("ReloadLevelButton").GetComponentInChildren<Button>();
+
+    }
+
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+
     }
 }

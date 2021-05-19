@@ -42,9 +42,9 @@ public class Holster : MonoBehaviour
     public float[] damage;
 
     public Canvas switchCanvas;
-    public string swCanvas = "SwitchWeaponCanvas";
+    public string gameplayCanvas = "GameplayUICanvas";
 
-    public Button switchWeapon;
+    public Button switchWeaponButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,11 +63,12 @@ public class Holster : MonoBehaviour
         repeatRates[1] = akRepeat;
         damage[0] = handgunDamage;
         damage[1] = akDamage;
-        
-        switchWeapon = GameObject.Find(swCanvas).GetComponentInChildren<Button>();
 
+        //switchWeapon = GameObject.Find(gameplayCanvas).GetComponentInChildren<Button>();
+
+        switchWeaponButton = GameObject.Find("SwitchWeaponButton").GetComponentInChildren<Button>();
         SelectWeapon();
-        switchWeapon.onClick.AddListener(ButtonClick);
+        switchWeaponButton.onClick.AddListener(ButtonClick);
 
     }
 
